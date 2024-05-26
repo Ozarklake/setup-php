@@ -1,0 +1,13 @@
+name: 'PHP 7.3 Docker Action'
+description: 'Runs commands in a PHP 7.3 Docker container'
+inputs:
+  script:
+    description: 'The script to run inside the PHP 7.3 container'
+    required: true
+    default: 'echo "Hello from PHP 7.3"'
+runs:
+  using: 'docker'
+  image: 'docker://docker-registry.fangintel.com/devops/php:7.3-phalcon'
+  args:
+    - ${{ inputs.script }}
+
